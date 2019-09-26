@@ -1,0 +1,12 @@
+# Ignore development packages
+node_modules
+package-lock.json
+package.json
+
+# Ignore metadata
+README.md
+LICENSE
+
+# Ignore Dockerfiles
+alpine.Dockerfile
+Dockerfile
