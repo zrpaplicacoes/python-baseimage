@@ -31,5 +31,5 @@ COPY bin /home/python/
 WORKDIR /home/python/app
 
 # Run the app
-ENTRYPOINT ["entrypoint"]
+ENTRYPOINT ["alpine_entrypoint"]
 CMD ["ash"]
