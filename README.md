@@ -1,4 +1,5 @@
 # Python Base Image
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
@@ -36,3 +37,19 @@ docker run -e USER_ID=<MY_USER_ID> zrpaplicacoes/python:latest
 ```
 
 This ensures that the user id inside the container is the same as the host. On Docker Compose, it's advised to provide user id as an environment variable through the `env_file` option.
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/GArmane"><img src="https://avatars1.githubusercontent.com/u/13931137?v=4" width="100px;" alt="Giovanni Armane"/><br /><sub><b>Giovanni Armane</b></sub></a><br /><a href="#maintenance-GArmane" title="Maintenance">🚧</a></td>
+  </tr>
+</table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

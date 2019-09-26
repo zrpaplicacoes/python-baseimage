@@ -1,0 +1,23 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "GArmane",
+      "name": "Giovanni Armane",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13931137?v=4",
+      "profile": "https://github.com/GArmane",
+      "contributions": [
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "python-baseimage",
+  "projectOwner": "zrpaplicacoes",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
