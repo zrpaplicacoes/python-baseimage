@@ -36,3 +36,5 @@ docker run -e USER_ID=<MY_USER_ID> zrpaplicacoes/python:latest
 ```
 
 This ensures that the user id inside the container is the same as the host. On Docker Compose, it's advised to provide user id as an environment variable through the `env_file` option.
+
+## All Contributors
