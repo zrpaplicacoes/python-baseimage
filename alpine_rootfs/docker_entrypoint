@@ -1,0 +1,34 @@
+#!/bin/ash
+
+# On errors, abort script
+set -e
+
+# Sources
+source /usr/local/bin/colors
+source /usr/local/bin/logo
+
+# Export default variables
+export USER=python
+
+# Functions
+configure_user() {
+  set -e
+  export USER_ID=${USER_ID:-1000}
+
+  echo ":::: Starting with (UID: $USER_ID, USER: $USER)"
+  # change user for all files inside home directory
+  chown -R python:app $APP_PATH
+
+  # always upgrade project bin folder to executable
+  if [ -d "$APP_PATH/bin" ]; then
+    chmod +x $APP_PATH/bin -R
+  fi
+}
+
+# Install script dependencies
+# Run the given command through exec
+echo -e ":::: Executing the given command: ${BBlue}'$@'${Color_Off}"
+
+# Configure and init user
+configure_user
+exec "$@"
