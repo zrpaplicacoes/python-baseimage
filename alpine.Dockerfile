@@ -14,9 +14,6 @@ ENV PYTHON_VERSION=3.7 \
 # Install and configure Poetry
 RUN pip install poetry
 
-## Set Poetry to create venvs inside project directory
-RUN poetry config settings.virtualenvs.in-project true
-
 # Configure user, groups and working directory
 RUN adduser -u 1000 -D python && \
   mkdir -p /home/python/app
