@@ -46,7 +46,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/GArmane"><img src="https://avatars1.githubusercontent.com/u/13931137?v=4" width="100px;" alt="Giovanni Armane"/><br /><sub><b>Giovanni Armane</b></sub></a><br /><a href="#maintenance-GArmane" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://github.com/GArmane"><img src="https://avatars1.githubusercontent.com/u/13931137?v=4" width="100px;" alt="Giovanni Armane"/><br /><sub><b>Giovanni Armane</b></sub></a><br /><a href="#maintenance-GArmane" title="Maintenance">🚧</a> <a href="https://github.com/zrpaplicacoes/python-baseimage/commits?author=GArmane" title="Code">💻</a></td>
   </tr>
 </table>
 
