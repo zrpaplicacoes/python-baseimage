@@ -1,5 +1,5 @@
 # Python 3.7 Release
-FROM python:3.7
+FROM python:3.8.0
 
 # Maintainer Information
 LABEL maintainer="ZRP <zrp@zrp.com.br>"
