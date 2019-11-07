@@ -22,7 +22,7 @@ script:
       set -Eeuo pipefail
       set -x
       travis_retry docker build -t "$image" -f "$dockerfile_path" .
-      ~/official-images/test/run.sh --config ./config.sh "$image"
+      ~/official-images/test/run.sh --config ~/official-images/test/config.sh --config ./config.sh "$image"
     )
 
 after_script:
