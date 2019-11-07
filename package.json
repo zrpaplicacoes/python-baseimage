@@ -1,9 +1,9 @@
 {
   "name": "@zrpaplicacoes/python-baseimage",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "scripts": {
     "commit": "git-cz",
-    "release": "node update.js && standard-version"
+    "release": "standard-version"
   },
   "author": "ZRP <zrp@zrp.com.br>",
   "license": "MIT",

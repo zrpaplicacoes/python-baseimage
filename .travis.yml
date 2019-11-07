@@ -13,7 +13,7 @@ install:
 
 before_script:
   - env | sort
-  - cd "$VERSION/$VARIANT"
+  - dockerfile_path "./$VERSION/$VARIANT/Dockerfile"
   - slash='/'; image="zrpaplicacoes/python:${VERSION}-${VARIANT//$slash/-}"
 
 script:
@@ -21,8 +21,8 @@ script:
     (
       set -Eeuo pipefail
       set -x
-      travis_retry docker build -t "$image" .
-      ~/official-images/test/run.sh "$image"
+      travis_retry docker build -t "$image" -f "$dockerfile_path" .
+      ~/official-images/test/run.sh --config ./config.sh "$image"
     )
 
 after_script:

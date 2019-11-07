@@ -1,14 +1,10 @@
-# Python Base Image
-<<<<<<< Updated upstream
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
-=======
->>>>>>> Stashed changes
+# Python Development Base Image
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/) [![Commitizen friendly](https://img.shields.io/badge/made_with_love_by-ZRP-red.svg?style=flat-square)](https://www.zrp.com.br/)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/) [![Developed by ZRP](https://img.shields.io/badge/made_with_love_by-ZRP-red.svg?style=flat-square)](https://www.zrp.com.br/)
 
-An image for Python projects with a small set of features to ease developing applications using docker and docker-compose. This image is built on top of Python and Python Alpine official images. The image and available tags can be found in [Docker Hub](https://hub.docker.com/r/zrpaplicacoes/python/).
+A **development** image for Python projects with a small set of features to ease bootstraping and starting apps using docker and docker-compose. This image is built on top of Python and Python Alpine official images. The image and available tags can be found in [Docker Hub](https://hub.docker.com/r/zrpaplicacoes/python/).
 
-This image opted to use Poetry as a package manager. Documentation for poetry can be found here [here](https://poetry.eustace.io/).
+This image uses **Poetry** release `0.12.17` as a package manager. Documentation for poetry can be found here [here](https://poetry.eustace.io/). Our recommendation is to pin on `pyproject.toml` the poetry version also, avoiding version mismatch between local and docker environments.
 
 ## Using the image
 
@@ -17,9 +13,12 @@ This image is intended to be used as a base image for your own Dockerfile, or di
 ### e.g. Dockerfile
 
 ```Dockerfile
-FROM zrpaplicacoes/python:3.7
+FROM zrpaplicacoes/python:3.8-alpine3.10
 
-# custom configuration
+# Update poetry to use preview
+RUN poetry self:update --preview
+
+# Other commands
 ```
 
 ### e.g. Docker Compose
@@ -40,6 +39,10 @@ docker run -e USER_ID=<MY_USER_ID> zrpaplicacoes/python:latest
 ```
 
 This ensures that the user id inside the container is the same as the host. On Docker Compose, it's advised to provide user id as an environment variable through the `env_file` option.
+
+## Disclaimer
+
+Do not use this image on **production** environments. For production, we recommend extending the **official-images** and use multi-stage builds for better image security and size.
 
 ## Contributors ✨
 
