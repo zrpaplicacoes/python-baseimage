@@ -37,9 +37,6 @@ RUN apk add --update curl && \
   /usr/includes/* \
   /var/cache/apk/*
 
-# Run as python user
-USER python
-
 # Run the app
 ENTRYPOINT ["alpine_entrypoint"]
 CMD ["ash"]
