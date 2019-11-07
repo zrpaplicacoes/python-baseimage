@@ -1,6 +1,6 @@
 # Python Development Base Image
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/) [![Developed by ZRP](https://img.shields.io/badge/made_with_love_by-ZRP-red.svg?style=flat-square)](https://www.zrp.com.br/)
+[![Build Status](https://travis-ci.com/zrpaplicacoes/python-baseimage.svg?branch=master)](https://travis-ci.com/zrpaplicacoes/python-baseimage) [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg)](#contributors) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) [![Developed by ZRP](https://img.shields.io/badge/made_with_love_by-ZRP-red.svg)](https://www.zrp.com.br/)
 
 A **development** image for Python projects with a small set of features to ease bootstraping and starting apps using docker and docker-compose. This image is built on top of Python and Python Alpine official images. The image and available tags can be found in [Docker Hub](https://hub.docker.com/r/zrpaplicacoes/python/).
 

@@ -7,7 +7,7 @@ LABEL license="MIT"
 
 # Set environment variables
 ENV APP_PATH=/home/python/app \
-  PATH=/usr/local/bin:/home/python:/home/python/app/bin:/home/python/.poetry/bin:$PATH \
+  PATH=/usr/local/bin:/home/python:/home/python/app/bin:$PATH \
   PYTHONVERSION=3.7 \
   PYTHONFAULTHANDLER=1 \
   PYTHONUNBUFFERED=1 \
@@ -16,9 +16,6 @@ ENV APP_PATH=/home/python/app \
   PIP_DISABLE_PIP_VERSION_CHECK=on \
   PIP_DEFAULT_TIMEOUT=100 \
   POETRY_VERSION=0.12.17
-
-# Install prerequisites
-RUN apt-get update && apt-get install -y curl
 
 # Configure user, groups and working directory
 RUN useradd -u 1000 -ms /bin/bash python && \
@@ -34,8 +31,16 @@ COPY bin /home/python/
 WORKDIR /home/python/app
 
 # Install and configure Poetry
-RUN curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python && \
-  poetry config settings.virtualenvs.in-project true
+RUN pip install "poetry==$POETRY_VERSION" && \
+  poetry config settings.virtualenvs.create false
+
+# Destroy garbage
+USER root
+RUN apt-get clean && \
+  rm -rf \
+  /usr/share/man/* \
+  /usr/includes/* \
+  /var/lib/apt/lists/*
 
 # Run the app
 ENTRYPOINT ["entrypoint"]

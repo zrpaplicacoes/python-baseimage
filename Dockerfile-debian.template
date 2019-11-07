@@ -28,7 +28,7 @@ WORKDIR /home/python/app
 
 # Install and configure Poetry
 RUN curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
-RUN poetry config settings.virtualenvs.in-project true
+RUN poetry config settings.virtualenvs.create false
 
 # Run the app
 ENTRYPOINT ["entrypoint"]

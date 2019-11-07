@@ -6,8 +6,8 @@ LABEL vendor="ZRP"
 LABEL license="MIT"
 
 # Set environment variables
-ENV APP_PATH=/home/python/app \
-  PATH=/usr/local/bin:/home/python/app/bin:/home/python/.poetry/bin:$PATH \
+ENV APP_PATH=/app \
+  PATH=/app/bin:/docker-entrypoint.d/bin:/usr/local/bin$PATH \
   PYTHONVERSION=3.7 \
   PYTHONFAULTHANDLER=1 \
   PYTHONUNBUFFERED=1 \
@@ -17,22 +17,18 @@ ENV APP_PATH=/home/python/app \
   PIP_DEFAULT_TIMEOUT=100 \
   POETRY_VERSION=0.12.17
 
-# Configure user, groups and working directory
-RUN adduser -u 1000 -D python && \
-  mkdir -p /home/python/app
-
 # Install custom scripts into local binaries
-COPY bin /home/python/
+COPY bin/alpine_entrypoint /docker-entrypoint.d/bin/
 
 # Set workdir
-WORKDIR /home/python/app
+WORKDIR /app
 
 # Install and configure Poetry
-RUN apk add --update curl && \
-  pip install "poetry==$POETRY_VERSION" && \
-  poetry config settings.virtualenvs.in-project true && \
-  apk del curl && \
-  rm -rf \
+RUN pip install "poetry==$POETRY_VERSION" && \
+  poetry config settings.virtualenvs.create false
+
+# Destroy garbage
+RUN rm -rf \
   /usr/share/man/* \
   /usr/includes/* \
   /var/cache/apk/*

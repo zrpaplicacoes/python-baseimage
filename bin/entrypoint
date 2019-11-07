@@ -67,9 +67,6 @@ IPurple='\033[0;95m'      # Purple
 ICyan='\033[0;96m'        # Cyan
 IWhite='\033[0;97m'       # White
 
-# Export default variables
-export USER=python
-
 cat <<EOF
 
 

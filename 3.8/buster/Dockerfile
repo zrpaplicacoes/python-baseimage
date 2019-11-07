@@ -24,9 +24,6 @@ RUN apt-get update && apt-get install -y curl
 RUN useradd -u 1000 -ms /bin/bash python && \
   mkdir -p /home/python/app
 
-# Run as python user
-USER python
-
 # Install custom scripts into local binaries
 COPY bin /home/python/
 
@@ -35,7 +32,7 @@ WORKDIR /home/python/app
 
 # Install and configure Poetry
 RUN curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python && \
-  poetry config settings.virtualenvs.in-project true
+  poetry config settings.virtualenvs.create false
 
 # Run the app
 ENTRYPOINT ["entrypoint"]

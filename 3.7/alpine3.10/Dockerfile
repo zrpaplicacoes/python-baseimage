@@ -7,7 +7,7 @@ LABEL license="MIT"
 
 # Set environment variables
 ENV APP_PATH=/home/python/app \
-  PATH=/usr/local/bin:/home/python:/home/python/app/bin:/home/python/.poetry/bin:$PATH \
+  PATH=/usr/local/bin:/home/python/app/bin:$PATH \
   PYTHONVERSION=3.7 \
   PYTHONFAULTHANDLER=1 \
   PYTHONUNBUFFERED=1 \
@@ -31,8 +31,15 @@ COPY bin /home/python/
 WORKDIR /home/python/app
 
 # Install and configure Poetry
-RUN curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python && \
-  poetry config settings.virtualenvs.in-project true
+RUN pip install "poetry==$POETRY_VERSION" && \
+  poetry config settings.virtualenvs.create false
+
+# Destroy garbage
+USER root
+RUN rm -rf \
+  /usr/share/man/* \
+  /usr/includes/* \
+  /var/cache/apk/*
 
 # Run the app
 ENTRYPOINT ["alpine_entrypoint"]
