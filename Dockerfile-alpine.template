@@ -1,5 +1,4 @@
-# Python 3.7 Release
-FROM python:3.7-alpine
+FROM python:%%VERSION%%--alpine
 
 # Maintainer Information
 LABEL maintainer="ZRP <zrp@zrp.com.br>"
@@ -7,7 +6,7 @@ LABEL vendor="ZRP"
 LABEL license="MIT"
 
 # Set environment variables
-ENV PYTHON_VERSION=3.7 \
+ENV PYTHONVERSION=%%VERSION%% \
   APP_PATH=/home/python/app \
   PATH=/usr/local/bin:/home/python:/home/python/app/bin:$PATH
 

@@ -130,3 +130,6 @@ bundles/
 vendor/pkg/
 pyenv
 Vagrantfile
+
+# Official Images
+official-images

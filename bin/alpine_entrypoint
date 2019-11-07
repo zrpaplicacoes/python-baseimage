@@ -85,7 +85,7 @@ EOF
 
 echo -e "${BYellow}> Running image zrpaplicacoes/python${Color_Off}"
 echo -e "> This image is under the ${BYellow}MIT${Color_Off} license${Color_Off}"
-echo -e "> Using ${BBlue}Python${Color_Off}${BYellow} $PYTHON_VERSION${Color_Off}"
+echo -e "> Using ${BBlue}Python${Color_Off}${BYellow} $PYTHONVERSION${Color_Off}"
 echo -e "> Maintained by Giovanni (${BBlue}giovanni.armane@zrp.com.br${Color_Off}) and Pedro (${BBlue}p@zrp.com.br${Color_Off})"
 echo -e "> The base dockerfile is available at ${BBlue}https://github.com/zrpaplicacoes/python-baseimage${Color_Off}"
 echo -e "> Doubts or questions?${Color_Off} Please, visit ${BBlue}https://github.com/zrpaplicacoes${Color_Off}"

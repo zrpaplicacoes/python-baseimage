@@ -1,7 +1,10 @@
 # Python Base Image
+<<<<<<< Updated upstream
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
+=======
+>>>>>>> Stashed changes
 
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/) [![Commitizen friendly](https://img.shields.io/badge/made_with_love_by-ZRP-red.svg?style=flat-square)](https://www.zrp.com.br/)
 
 An image for Python projects with a small set of features to ease developing applications using docker and docker-compose. This image is built on top of Python and Python Alpine official images. The image and available tags can be found in [Docker Hub](https://hub.docker.com/r/zrpaplicacoes/python/).
 
