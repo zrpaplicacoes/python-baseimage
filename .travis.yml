@@ -13,7 +13,7 @@ install:
 
 before_script:
   - env | sort
-  - dockerfile_path "./$VERSION/$VARIANT/Dockerfile"
+  - dockerfile_path="./$VERSION/$VARIANT/Dockerfile"
   - slash='/'; image="zrpaplicacoes/python:${VERSION}-${VARIANT//$slash/-}"
 
 script:
