@@ -6,7 +6,7 @@
   "author": "ZRP <zrp@zrp.com.br>",
   "license": "MIT",
   "devDependencies": {
-    "commitizen": "^4.0.3",
+    "commitizen": "^4.0.4",
     "cz-conventional-changelog": "^3.0.2"
   },
   "config": {
